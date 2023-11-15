@@ -1,3 +1,4 @@
+import CreateNoteDialog from "@/components/CreateNoteDialog";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { UserButton, auth } from "@clerk/nextjs";
@@ -32,9 +33,14 @@ const DashboardPage = (props: Props) => {
                 <Separator />
                 <div className="h-8"></div>
                 {/* list all the notes */}
-                {/* TODO conditionally rendered*/}
+                {/* TODO conditionally rendered */}
                 <div className="text-center">
                     <h2 className="text-xl text-gray-500">You have no notes yet.</h2>
+                </div>
+
+                {/* display all the notes */}
+                <div className="grid sm:grid-cols-3 md:grid-cols-5 grid-cols-1 gap-3">
+                    <CreateNoteDialog />
                 </div>
             </div>
         </div>
